@@ -7,7 +7,7 @@ This example targets HaxePress 2.16.0 and plugin API 4. Activating it adds the `
 1. Sign in to a HaxePress JVM site with package management access.
 2. Open **Plugins** and select **Install from GitHub**.
 3. Paste the repository URL `https://github.com/hxwell/haxepress-plugin-example` and choose **Load releases**.
-4. Select the ZIP under `v0.1.0`, inspect it and choose **Install package**.
+4. Select the ZIP under `v0.1.1`, inspect it and choose **Install package**.
 5. Activate **GitHub Release Example**, then open `/github-release-example` on the site.
 
 ## Build and release
@@ -23,12 +23,14 @@ make -C .build/haxepress setup
 make -C .build/haxepress build
 ```
 
-The build creates `.build/haxepress/Export/packages/github-release-example-0.1.0.zip` with the JVM JAR, CPPIA and PHP modules. Attach this ZIP to a published GitHub release in your public repository.
+The build creates `.build/haxepress/Export/packages/github-release-example-0.1.1.zip` with the JVM JAR, CPPIA and PHP modules. Attach this ZIP to a published GitHub release in your public repository.
 
 ```sh
-gh release create v0.1.0 \
-  .build/haxepress/Export/packages/github-release-example-0.1.0.zip \
-  --title v0.1.0 --generate-notes
+gh release create v0.1.1 \
+  .build/haxepress/Export/packages/github-release-example-0.1.1.zip \
+  --title v0.1.1 --generate-notes
 ```
 
 Use the same layout to start your own plugin repository. Update the slug, entrypoint and package version in `cms-package.json`. Build each release against the exact HaxePress version declared by its manifest.
+
+Generate a UUID once for your plugin project and place it in `pluginId`. Keep that value on subsequent releases so installations and scheduled jobs continue to refer to the same plugin.
