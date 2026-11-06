@@ -1,0 +1,16 @@
+{
+  "apiVersion": 4,
+  "cmsVersion": "2.16.0",
+  "kind": "plugin",
+  "slug": "github-release-example",
+  "name": "GitHub Release Example",
+  "version": "0.1.0",
+  "description": "Adds a small status endpoint to demonstrate installation from a GitHub release.",
+  "author": "HaxePress",
+  "server": {
+    "jar": "server.jar",
+    "cppia": "server.cppia",
+    "php": "php/module.json",
+    "entrypoint": "example.github.ReleasePlugin"
+  }
+}
